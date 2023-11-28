@@ -1,2 +1,3 @@
 export * from "./button";
-export * from "./nav/index";
+export * from "./header";
+export * from "./footer";

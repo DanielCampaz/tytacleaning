@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode } from "react";
+import { FC, MouseEvent, ReactNode } from "react";
 
 const Variants = {
   default: "rounded text-sm p-1.5 bg-white text-black",
@@ -11,14 +11,14 @@ export interface BottonProps {
   variants?: keyof typeof Variants;
 }
 
-export default function Button({
+export const Button: FC<BottonProps> = ({
   variants = "default",
   children,
   onClick,
-}: BottonProps) {
+}: BottonProps) => {
   return (
     <button className={Variants[variants]} onClick={onClick}>
       {children}
     </button>
   );
-}
+};

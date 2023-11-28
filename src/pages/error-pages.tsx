@@ -1,7 +1,7 @@
 import { useRouteError } from "react-router-dom";
 import { LogosTheme } from "../libs/utils";
 import { Link } from "react-router-dom";
-import Button from "../libs/components/button";
+import { Button } from "../libs/components";
 
 export default function ErrorPage() {
   const error = useRouteError() as {

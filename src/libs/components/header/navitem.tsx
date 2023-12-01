@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { RoutesIcon } from "../header";
+import { RoutesIcon } from "../../../types";
+import Image from "../images";
 
 export interface NavItemProps {
   to: string;
@@ -20,7 +21,7 @@ export const NavItem: FC<NavItemProps> = ({
   return (
     <Link to={to} className={classNames[cls]}>
       {icon !== undefined ? (
-        <img src={icon.white} alt={icon.alt} className="w-[36px] max-w-none" />
+        <Image src={icon.white} alt={icon.alt} width="w-[36px]" />
       ) : (
         <div>{children}</div>
       )}

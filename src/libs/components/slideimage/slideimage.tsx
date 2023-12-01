@@ -53,7 +53,7 @@ export const SlideImage: React.FC = () => {
               alt={img.name}
               style={{
                 maxWidth: "100%",
-                maxHeight: "400px",
+                maxHeight: "500px",
                 width: "100%",
                 height: "auto",
                 objectFit: "cover",

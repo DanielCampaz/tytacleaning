@@ -6,8 +6,12 @@ export default function Layout() {
   return (
     <main>
       <Header />
-      <Outlet />
-      <Footer />
+      <div className="container mx-auto px-4 mt-10">
+        <Outlet />
+      </div>
+      <div className="mb-15">
+        <Footer />
+      </div>
     </main>
   );
 }

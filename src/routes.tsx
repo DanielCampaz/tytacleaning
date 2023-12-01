@@ -1,27 +1,7 @@
 import { RouteObject } from "react-router-dom";
-import Layout from "./pages/layout";
-import ErrorPage from "./pages/error-pages";
-import Home from "./pages/home";
-import About from "./pages/about";
+import { RoutesSingleton } from "./libs/utils";
 
-export const routes: RouteObject[] = [
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-    ],
-  },
-] as const;
+export const routes: RouteObject[] =
+  new RoutesSingleton().getReactRouterRoutes();
 
 export default routes;
-
-export const routeChild = routes[0].children;

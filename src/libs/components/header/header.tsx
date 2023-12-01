@@ -1,49 +1,11 @@
 import { FC, useState } from "react";
 import { NavItem } from "./navitem";
 import { SlideImage } from "../slideimage";
-
-export interface RoutesIcon {
-  dark: string;
-  white: string;
-  alt: string;
-}
-
-export interface RoutesConst {
-  path: string;
-  name: string;
-  icon?: RoutesIcon;
-}
-
-const Routes: RoutesConst[] = [
-  {
-    path: "/",
-    name: "Home",
-    icon: {
-      dark: "tytaLogo-white.ico",
-      white: "tytaLogo.ico",
-      alt: "Logo",
-    },
-  },
-  {
-    path: "/about",
-    name: "About",
-  },
-  {
-    path: "/service",
-    name: "Service",
-  },
-  {
-    path: "/projects",
-    name: "Projects",
-  },
-  {
-    path: "/contact",
-    name: "Contact",
-  },
-];
+import { RoutesSingleton } from "../../utils";
 
 export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [RoutesN] = useState(new RoutesSingleton().getNavbarRoutes());
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -54,8 +16,8 @@ export const Header: FC = () => {
       <nav className="pl-4 pr-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <NavItem to={Routes[0].path} cls={1} icon={Routes[0].icon}>
-              {Routes[0].name}
+            <NavItem to={RoutesN[0].path} cls={1} icon={RoutesN[0].icon}>
+              {RoutesN[0].name}
             </NavItem>
           </div>
           <div className="md:hidden">
@@ -75,7 +37,7 @@ export const Header: FC = () => {
             }`}
           >
             {/* Aquí colocarías tus elementos de menú */}
-            {Routes.map((rou, index) => (
+            {RoutesN.map((rou, index) => (
               <NavItem cls={0} to={rou.path} key={`navbarcon-${index}`}>
                 {rou.name}
               </NavItem>
@@ -85,7 +47,7 @@ export const Header: FC = () => {
         {/* Menú de hamburguesa para pantallas pequeñas */}
         <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
           {/* Aquí colocarías tus elementos de menú */}
-          {Routes.map((rou, index) => (
+          {RoutesN.map((rou, index) => (
             <NavItem cls={1} to={rou.path} key={`navbarconham-${index}`}>
               {rou.name}
             </NavItem>

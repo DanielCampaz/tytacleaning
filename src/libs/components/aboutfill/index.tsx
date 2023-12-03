@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import { Button } from "..";
+import { ConvertText, ConvertUrlId } from "../../utils";
+import Anchor from "../anchor";
 import Image from "../images";
 
 export interface AboutFillPropsImage {
@@ -11,6 +12,8 @@ export interface AboutFillProps {
   image: AboutFillPropsImage;
   title: string;
   paragraph: string;
+  id?: string | number;
+  contactName: string;
 }
 
 export default function AboutFill({
@@ -18,6 +21,8 @@ export default function AboutFill({
   image,
   paragraph,
   title,
+  id,
+  contactName,
 }: AboutFillProps) {
   if (side === 1) {
     return (
@@ -33,12 +38,12 @@ export default function AboutFill({
 
         <div className="md:w-1/2 flex flex-col justify-center mt-4 md:mt-0">
           <div className="text-center">
-            <h1 className="text-2xl font-bold">{title}</h1>
-            <p className="mt-2">{paragraph}</p>
+            <h1 className="text-2xl font-bold">{ConvertText(title)}</h1>
+            <p className="mt-2">{ConvertText(paragraph)}</p>
             <div className="mt-5 mx-auto">
-              <Link to="/contact">
-                <Button variants="black">Contact</Button>
-              </Link>
+              <Anchor to={ConvertUrlId("/contact", "/contact/", id)}>
+                <Button variants="black">{ConvertText(contactName)}</Button>
+              </Anchor>
             </div>
           </div>
         </div>
@@ -49,12 +54,12 @@ export default function AboutFill({
       <div className="container p-6 flex flex-col md:flex-row ">
         <div className="md:w-1/2 flex flex-col justify-center mb-4 md:mt-0">
           <div className="text-center">
-            <h1 className="text-2xl font-bold">{title}</h1>
-            <p className="mt-2">{paragraph}</p>
+            <h1 className="text-2xl font-bold">{ConvertText(title)}</h1>
+            <p className="mt-2">{ConvertText(paragraph)}</p>
             <div className="mt-5 mx-auto">
-              <Link to="/contact">
-                <Button variants="black">Contact</Button>
-              </Link>
+              <Anchor to={ConvertUrlId("/contact", "/contact/", id)}>
+                <Button variants="black">{ConvertText(contactName)}</Button>
+              </Anchor>
             </div>
           </div>
         </div>

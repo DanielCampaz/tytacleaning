@@ -12,4 +12,5 @@ export interface RoutesConst {
 
 export interface RoutesType extends RoutesConst {
   element: JSX.Element;
+  wid?: boolean;
 }

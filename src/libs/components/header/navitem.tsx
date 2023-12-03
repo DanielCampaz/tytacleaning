@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
-import { Link } from "react-router-dom";
 import { RoutesIcon } from "../../../types";
 import Image from "../images";
+import Anchor from "../anchor";
 
 export interface NavItemProps {
   to: string;
@@ -19,12 +19,12 @@ export const NavItem: FC<NavItemProps> = ({
   icon,
 }: NavItemProps) => {
   return (
-    <Link to={to} className={classNames[cls]}>
+    <Anchor to={to} className={classNames[cls]}>
       {icon !== undefined ? (
         <Image src={icon.white} alt={icon.alt} width="w-[36px]" />
       ) : (
         <div>{children}</div>
       )}
-    </Link>
+    </Anchor>
   );
 };

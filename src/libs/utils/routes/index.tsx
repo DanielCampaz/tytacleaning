@@ -7,6 +7,8 @@ import ErrorPage from "../../../pages/error-pages";
 import Services from "../../../pages/services";
 import Projects from "../../../pages/projects";
 import Contact from "../../../pages/contact";
+import ServiceId from "../../../pages/serviceid";
+import ContactId from "../../../pages/contactid";
 
 export class RoutesSingleton {
   private routes: RoutesType[] = [];
@@ -34,8 +36,14 @@ export class RoutesSingleton {
       },
       {
         path: "/services",
-        element: <Services />,
+        element: <Services type="page" />,
         name: "Services",
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceId />,
+        name: "Services",
+        wid: true,
       },
       {
         path: "/projects",
@@ -46,6 +54,12 @@ export class RoutesSingleton {
         path: "/contact",
         element: <Contact />,
         name: "Contact",
+      },
+      {
+        path: "/contact/:id",
+        element: <ContactId />,
+        name: "Contact",
+        wid: true,
       },
     ];
   }
@@ -64,6 +78,8 @@ export class RoutesSingleton {
   }
 
   getNavbarRoutes(): RoutesConst[] {
-    return this.routes.map(({ name, path, icon }) => ({ name, path, icon }));
+    return this.routes
+      .filter(({ wid }) => wid !== true)
+      .map(({ name, path, icon }) => ({ name, path, icon }));
   }
 }

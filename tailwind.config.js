@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "image-one": "url('/public/homeimgs/1.jpg')",
+      },
+    },
   },
   plugins: [],
 };

@@ -1,4 +1,5 @@
 import AboutFill from "../../libs/components/aboutfill";
+import useArrayTransform from "../../libs/hooks/useArrayTransform";
 
 const data = [
   {
@@ -21,12 +22,18 @@ const data = [
   },
 ];
 
-export default function About() {
+export interface AboutProps {
+  slice?: number;
+}
+
+export default function About({ slice }: AboutProps) {
+  const datas = useArrayTransform(data, slice);
   return (
     <div>
-      {data.map((dat, index) => (
+      {datas.map((dat, index) => (
         <AboutFill
           key={`about-aboutfill-${index}`}
+          contactName="contact"
           image={dat.image}
           paragraph={dat.paragraph}
           title={dat.title}

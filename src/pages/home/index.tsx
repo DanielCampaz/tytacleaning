@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <About />
-      <Services />
+      <Services type="component" />
       <Projects />
       <Contact />
     </>

@@ -1,3 +1,5 @@
+import { DateString } from "../../types";
+
 export const LogosTheme = (theme: 0 | 1) => {
   const lthe = ["tytaLogo.ico", "tytaLogo-white.ico"];
 
@@ -17,5 +19,27 @@ export const ConvertUrlId = (
     return urlWhitID + id;
   } else {
     return urlWhitOutID;
+  }
+};
+
+export const GetDate = (separator = "-") => {
+  const date = new Date();
+
+  return `${date.getDay()}${separator}${date.getMonth()}${separator}${date.getFullYear()}`;
+};
+
+export const GetDateFormat = (datef: DateString, separator = "-") => {
+  const date = new Date(datef);
+
+  return `${date.getDate()}${separator}${
+    date.getMonth() + 1
+  }${separator}${date.getFullYear()}`;
+};
+
+export const TextShortener = (texto: string, longitudMaxima: number = 100) => {
+  if (texto.length > longitudMaxima) {
+    return texto.slice(0, longitudMaxima) + "...";
+  } else {
+    return texto;
   }
 };

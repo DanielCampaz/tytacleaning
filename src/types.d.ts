@@ -14,3 +14,10 @@ export interface RoutesType extends RoutesConst {
   element: JSX.Element;
   wid?: boolean;
 }
+
+export type DateStringLarge =
+  `${string}/${string}/${string}T${string}${string}:${string}${string}:${string}${string}.${string}${string}${string}Z`;
+export type DateStringLong = `${string}/${string}/${string}`;
+export type DateString = DateStringLong | DateStringLarge;
+
+export type ComPage = "page" | "component";

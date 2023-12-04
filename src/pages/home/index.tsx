@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <About />
       <Services type="component" />
-      <Projects />
+      <Projects slice={3} />
       <Contact />
     </>
   );

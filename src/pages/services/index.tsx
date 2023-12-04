@@ -1,10 +1,11 @@
 import Anchor from "../../libs/components/anchor";
 import useDataService from "../../libs/hooks/useDataServices";
 import { ConvertText } from "../../libs/utils";
+import { ComPage } from "../../types";
 import About from "../about";
 
 export interface ServiceProps {
-  type: "page" | "component";
+  type: ComPage;
 }
 
 export function ServicesRoundend() {

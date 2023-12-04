@@ -1,7 +1,7 @@
 import { DateString } from "../../types";
 
 export const LogosTheme = (theme: 0 | 1) => {
-  const lthe = ["tytaLogo.ico", "tytaLogo-white.ico"];
+  const lthe = ["/public/tytaLogo.ico", "/public/tytaLogo-white.ico"];
 
   return lthe[theme];
 };

@@ -2,12 +2,13 @@ import Anchor from "../../libs/components/anchor";
 import useArrayTransform from "../../libs/hooks/useArrayTransform";
 import useProjectsData from "../../libs/hooks/useProjectsData";
 import { GetDateFormat, TextShortener } from "../../libs/utils";
+import { ImageDateProjectType } from "../../libs/utils/const/projectsconst";
 import { DateString } from "../../types";
 
 export interface ProjectsCardProps {
   index: number | string;
   date: DateString;
-  image: string;
+  image: ImageDateProjectType;
   title: string;
   desc: string;
 }
@@ -22,7 +23,7 @@ export function ProjectsCard({
   return (
     <div className="max-w-[30%] rounded-lg shadow">
       <Anchor to={`/projects/${index}`}>
-        <img className="rounded-t-lg" src={image} alt={title} />
+        <img className="rounded-t-lg" src={image.original} alt={title} />
       </Anchor>
       <div className="p-5">
         <Anchor to={`/projects/${index}`}>
@@ -65,10 +66,7 @@ export default function Projects({ slice }: ProjectsProps) {
   const dataProjects = useArrayTransform(dataProjectsW, slice);
   return (
     <div>
-      <h1 className="text-2xl font-bold">
-        <Anchor to="/projects">Projects: </Anchor>
-      </h1>
-      <div className="container flex items-center justify-center flex-wrap w-full mt-5 gap-4">
+      <div className="container flex items-center justify-center flex-wrap w-full  gap-4">
         {dataProjects.map((data, index) => (
           <ProjectsCard
             key={`PorjectCars-${index}-oiu`}

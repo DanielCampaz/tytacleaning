@@ -39,9 +39,6 @@ export function ServicesRoundend() {
 export default function Services({ type }: ServiceProps) {
   return (
     <div>
-      <h1 className="text-2xl font-bold">
-        <Anchor to="/services">Services: </Anchor>
-      </h1>
       {type === "component" ? (
         <ServicesRoundend />
       ) : (

@@ -9,6 +9,7 @@ import Projects from "../../../pages/projects";
 import Contact from "../../../pages/contact";
 import ServiceId from "../../../pages/serviceid";
 import ContactId from "../../../pages/contactid";
+import ProjectId from "../../../pages/projectid";
 
 export class RoutesSingleton {
   private routes: RoutesType[] = [];
@@ -24,8 +25,8 @@ export class RoutesSingleton {
         name: "Home",
         element: <Home />,
         icon: {
-          dark: "tytaLogo-white.ico",
-          white: "tytaLogo.ico",
+          dark: "/public/tytaLogo-white.ico",
+          white: "/public/tytaLogo.ico",
           alt: "Logo",
         },
       },
@@ -49,6 +50,12 @@ export class RoutesSingleton {
         path: "/projects",
         element: <Projects />,
         name: "Projects",
+      },
+      {
+        path: "/projects/:id",
+        element: <ProjectId />,
+        name: "Projects",
+        wid: true,
       },
       {
         path: "/contact",

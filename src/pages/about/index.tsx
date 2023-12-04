@@ -7,7 +7,7 @@ const data = [
     paragraph:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores magnam maxime earum nisi amet ut similique dolores dolorum est magni quibusdam non assumenda repellat vero, quam officia unde reprehenderit provident!.",
     image: {
-      src: "homeimgs/1.jpg",
+      src: "/public/homeimgs/1.jpg",
       alt: "Photo One",
     },
   },
@@ -16,7 +16,7 @@ const data = [
     paragraph:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores magnam maxime earum nisi amet ut similique dolores dolorum est magni quibusdam non assumenda repellat vero, quam officia unde reprehenderit provident!.",
     image: {
-      src: "homeimgs/3.jpg",
+      src: "/public/homeimgs/3.jpg",
       alt: "Photo Three",
     },
   },
